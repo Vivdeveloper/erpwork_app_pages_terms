@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ERPWork Privacy Policy</title>
+<meta name="description" content="Privacy policy for the ERPWork mobile app for ERPNext.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1d1d1f; --muted: #5f6368; --rule: #e3e3e6; --link: #0b57d0; --code: #f3f3f5;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121214; --fg: #ececf0; --muted: #a5a7ad; --rule: #2c2c31; --link: #8ab4f8; --code: #1f1f24; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 36px 0 8px; padding-top: 16px; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1rem; margin: 20px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 4px 0; }
+  a { color: var(--link); }
+  .meta { color: var(--muted); margin: 0 0 24px; }
+  code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+<h1>ERPWork Privacy Policy</h1>
+<p class="meta">Effective date: 2026-10-20<br>
+App: ERPWork (Android package <code>com.buildwithvivek.erpnext</code>)<br>
+Developer: Build with Vivek<br>
+Contact: <a href="mailto:choudharyvivek195@gmail.com">choudharyvivek195@gmail.com</a></p>
+
+<p>ERPWork is a mobile companion app for ERPNext (Frappe). You sign in with an account that your organisation already created on its own ERPNext site. This policy explains what data the app handles, where it goes, and the choices you have.</p>
+
+<h2>Summary</h2>
+<ul>
+  <li>The app sends your data to <strong>the ERPNext site you sign in to</strong>, which your organisation runs or chooses. We (the developer) do not run a server that receives your data.</li>
+  <li>Two exceptions: when you open the attendance check-in screen, your coordinates are sent to <strong>Google Maps</strong> to draw a map preview; and the app shows <strong>Google AdMob</strong> ads on Home and the dashboards, so Google's ads SDK collects advertising data (see <a href="#ads">Ads</a>).</li>
+  <li>In the EEA, UK and other places where consent is required, ads are personalised only if you allow it; elsewhere, ads may be personalised unless you opt out in your phone's ad settings (see <a href="#ads">Ads</a>). Otherwise you get non-personalised ads. No other analytics or crash-reporting SDKs, and we never sell your data.</li>
+  <li>Location is used only in the foreground, when you open Check In or Check Out. Never in the background.</li>
+  <li>The app does not create accounts. Your organisation's ERPNext administrator manages your account and the data stored on the site.</li>
+</ul>
+
+<h2>Who is responsible for your data</h2>
+<p>Data you send through ERPWork is stored on your organisation's ERPNext site. Your organisation controls that data and decides how long it is kept; please also read its own privacy notice. The developer is responsible for how the app itself handles data on your device, as described here.</p>
+
+<h2>Data the app handles</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Data</th><th>When and why</th><th>Sent to</th></tr></thead>
+  <tbody>
+    <tr><td>Username or email and password</td><td>To sign you in.</td><td>Your ERPNext site's login endpoint only.</td></tr>
+    <tr><td>Name, email, user ID, mobile number, location text, interests, bio</td><td>Shown in your profile; sent when you edit your profile. Mobile number and profile fields are optional.</td><td>Your ERPNext site.</td></tr>
+    <tr><td>Precise device location (latitude and longitude)</td><td>Attendance check-in/check-out, only after you open Check In or Check Out and allow location. Recorded on the check-in if available; if no location fix is available, the check-in may be saved without real coordinates (as 0,0).</td><td>Your ERPNext site (saved on the Employee Checkin record) and Google Maps (map preview, see below).</td></tr>
+    <tr><td>Photos</td><td>Only photos you choose to take with the camera or pick from your library, for your profile photo or as attachments on CRM records.</td><td>Your ERPNext site. Profile photos are uploaded as public files on the site (visible to anyone who can reach the file URL, which is standard ERPNext behaviour for user images). CRM attachments are uploaded as private files.</td></tr>
+    <tr><td>Files and documents</td><td>Attachments you upload; PDFs you download from your site to view or share.</td><td>Your ERPNext site. Sharing a PDF uses your phone's share sheet, to an app you pick.</td></tr>
+    <tr><td>Business records and activity</td><td>Documents, CRM leads and contacts, comments, check-ins and search terms you type.</td><td>Your ERPNext site.</td></tr>
+    <tr><td>Advertising ID and other device identifiers, IP address (approximate location), ad interactions (such as app launches, taps and ad views) and diagnostics (such as app launch time and performance)</td><td>Collected automatically by the Google Mobile Ads SDK when it starts and when an ad is requested or shown, for advertising, ad measurement, analytics and fraud prevention. Where consent is required (EEA/UK), used for personalised ads only with your permission; elsewhere, unless you opt out in your phone's ad settings (see <a href="#ads">Ads</a>).</td><td>Google (AdMob).</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Contacting people from CRM records</h3>
+<p>Call, Email and WhatsApp buttons on CRM records open your phone dialer, mail app or WhatsApp with that contact's number or address. The app does not read your phone's contacts or call log.</p>
+
+<h3>Data the app does not collect</h3>
+<p>Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>): no install ID or push token; no usage analytics or crash logs of our own; no contacts, call logs, SMS, calendar, health, financial or audio data; no microphone access; no background location.</p>
+
+<h2>Third parties</h2>
+<ul>
+  <li><strong>Your ERPNext site.</strong> Receives the data listed above. It is operated by or for your organisation, not by us.</li>
+  <li><strong>Google Maps.</strong> When the check-in screen opens and a location is available, your coordinates are sent to <code>maps.google.com</code> to display an embedded map. Google processes that request under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+  <li><strong>Google AdMob.</strong> The Google Mobile Ads SDK in the app receives the advertising data listed above directly from your phone. Google uses it as described in <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+  <li><strong>Notifications.</strong> Notifications are created on your phone from your site's notification log. The app does not register with Expo, Firebase or any other push service.</li>
+</ul>
+<p>We do not sell personal data. The only data shared for advertising is what Google's ads SDK collects, described under <a href="#ads">Ads</a>. Your ERPNext business data, profile and location coordinates are never sent to the ads SDK.</p>
+
+<h2 id="ads">Ads</h2>
+<p>ERPWork shows ads on Home and the app dashboards: a native ad card between the content and a banner at the end, each clearly marked "Ad". It may also show an occasional full-screen ad when you open a dashboard. Ads are served by Google AdMob. There are no ads on sign-in, forms, documents, lists or the ERPNext desk.</p>
+<ul>
+  <li><strong>Consent (EEA, UK and where required).</strong> Before personalised ads are shown, the app asks for your choice using Google's consent form (User Messaging Platform). If you do not consent, you get non-personalised ads.</li>
+  <li><strong>Everywhere else.</strong> Android does not ask before apps read the advertising ID, so ads may be personalised unless you opt out of ads personalisation or delete your advertising ID in your phone's ad settings (see below).</li>
+  <li><strong>Non-personalised ads</strong> are based on context, such as the app and your approximate location, not on your profile. Google may still use identifiers and similar data for frequency capping, aggregated ad reporting and fraud prevention.</li>
+</ul>
+<p>How to opt out or change your choice:</p>
+<ul>
+  <li><strong>In the app:</strong> Settings &gt; Privacy &amp; ads (shown where Google's consent rules apply, such as the EEA and UK), to review or change your ad consent.</li>
+  <li><strong>Phone settings:</strong> Settings &gt; Privacy &gt; Ads (or Settings &gt; Google &gt; Ads), where you can delete your advertising ID or opt out of ads personalisation.</li>
+  <li><strong>Google:</strong> <a href="https://myadcenter.google.com/">My Ad Center</a>, to control the ads Google shows you.</li>
+</ul>
+
+<h2>Data stored on your device</h2>
+<ul>
+  <li><strong>Saved logins.</strong> If you turn on "remember", your username and password are stored in the phone's secure storage (encrypted with a key kept in the Android Keystore). Remove them any time in Settings &gt; Sites &amp; saved logins.</li>
+  <li><strong>Session.</strong> Your site's session cookie is kept by the phone's networking system.</li>
+  <li><strong>Cache.</strong> Recently loaded ERPNext data and site images are cached to make the app faster. Signing out clears this cache and removes the app's notifications and reminders. Downloaded PDFs or attachments may remain in the app's temporary cache folder until the system clears it or you clear the app's storage.</li>
+  <li>App data is excluded from Android cloud backup.</li>
+</ul>
+
+<h2>Permissions</h2>
+<ul>
+  <li><strong>Location (foreground only).</strong> Asked only after an in-app explanation (in the welcome prompt after sign-in, in Settings, or when you first open Check In or Check Out), and used only for attendance check-in/check-out. Optional unless your organisation's HR settings require location for check-ins.</li>
+  <li><strong>Notifications.</strong> To show alerts for assignments, approvals, mentions and your reminders. Optional.</li>
+  <li><strong>Camera and photos.</strong> The camera is used only when you choose to take a photo. Existing photos are chosen through the system photo picker; the app does not request photo or storage permission and does not get access to your whole photo library. On Android 9 and older, taking a photo also asks for storage permission so the camera can save the picture.</li>
+  <li><strong>Biometrics (fingerprint or face unlock).</strong> Used only to lock and unlock the app. Verification happens on your device; the app receives only a pass/fail result, and no biometric data leaves your phone.</li>
+  <li><strong>Advertising ID.</strong> Android lets the ads SDK read the advertising ID without a prompt; you can delete it or opt out of ads personalisation in your phone's ad settings.</li>
+</ul>
+<p>You can change any permission in your phone's settings at any time.</p>
+
+<h2>Security</h2>
+<p>The app only connects to sites using HTTPS, so data between the app and your ERPNext site is encrypted in transit. The Google Maps request and the data the ads SDK sends to Google are also encrypted in transit. Saved passwords are kept in Android's secure storage (Android Keystore). No method of transmission or storage is completely secure, but we work to protect your data.</p>
+
+<h2>Retention and deletion</h2>
+<ul>
+  <li><strong>On your ERPNext site:</strong> data is kept according to your organisation's policies. To have your account or data deleted, ask your organisation's ERPNext administrator, who controls that site.</li>
+  <li><strong>On your device:</strong> signing out clears cached data and notifications. Removing a site in Settings &gt; Sites &amp; saved logins deletes the saved login. Uninstalling the app removes all app data from the phone.</li>
+  <li><strong>Help from us:</strong> email <a href="mailto:choudharyvivek195@gmail.com">choudharyvivek195@gmail.com</a> and we will help you reach the right person. We do not hold copies of your ERPNext data ourselves.</li>
+  <li><strong>Advertising data:</strong> data collected by Google's ads SDK is held by Google under its own retention policies (see <a href="https://policies.google.com/technologies/retention">How Google retains data</a>); we do not receive it. You can reset or delete your advertising ID in your phone's settings and manage ad data in <a href="https://myadcenter.google.com/">My Ad Center</a>.</li>
+</ul>
+<p>The app has a "Delete account &amp; data" option in Settings &gt; About that explains these steps.</p>
+
+<h2>Children</h2>
+<p>ERPWork is a business app for employees of organisations using ERPNext. It is not directed at children under 13 (or the minimum age in your country), and we do not knowingly collect data from children.</p>
+
+<h2>Changes to this policy</h2>
+<p>We may update this policy when the app changes. We will post the new version on this page with a new effective date, and highlight significant changes in the app or store listing.</p>
+
+<h2>Contact</h2>
+<p>Build with Vivek<br>
+Email: <a href="mailto:choudharyvivek195@gmail.com">choudharyvivek195@gmail.com</a></p>
+</main>
+</body>
+</html>
