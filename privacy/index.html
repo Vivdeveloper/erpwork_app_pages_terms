@@ -348,17 +348,18 @@
       <h2>Permissions</h2>
       <ul>
         <li>
-          <strong>Location (foreground only).</strong> Asked only after an in-app explanation (in
-          the welcome prompt after sign-in, in Settings, or when you first open Check In or Check
-          Out), and used only for attendance check-in/check-out. Optional unless your organisation's
-          HR settings require location for check-ins.
+          <strong>Location (foreground only).</strong> Asked with your phone's permission dialog
+          (once after sign-in, and again when you open Check In or Check Out if not yet allowed), and
+          used only for attendance check-in/check-out, never in the background. Optional unless your
+          organisation's HR settings require location for check-ins.
         </li>
         <li>
           <strong>Notifications.</strong> To show alerts for assignments, approvals, mentions and
           your reminders. Optional.
         </li>
         <li>
-          <strong>Camera and photos.</strong> The camera is used only when you choose to take a
+          <strong>Camera and photos.</strong> Camera permission is asked once after sign-in (and
+          again if needed when you take a photo); the camera is used only when you choose to take a
           photo. Existing photos are chosen through the system photo picker; the app does not
           request photo or storage permission and does not get access to your whole photo library.
           On Android 9 and older, taking a photo also asks for storage permission so the camera can
