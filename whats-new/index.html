@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ERPWork Release Notes</title>
+    <meta
+      name="description"
+      content="What's new in each version of ERPWork, the mobile app for ERPNext." />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #1d1d1f;
+        --muted: #5f6368;
+        --rule: #e3e3e6;
+        --link: #0b57d0;
+        --chip: #eef3fd;
+        --chip-fg: #0b57d0;
+        --soon: #fff4e5;
+        --soon-fg: #9a5b00;
+        color-scheme: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121214;
+          --fg: #ececf0;
+          --muted: #a5a7ad;
+          --rule: #2c2c31;
+          --link: #8ab4f8;
+          --chip: #1c2638;
+          --chip-fg: #8ab4f8;
+          --soon: #33270f;
+          --soon-fg: #f2c46d;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.6 -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 32px 16px 64px;
+      }
+      h1 {
+        font-size: 1.9rem;
+        line-height: 1.2;
+        margin: 0 0 4px;
+      }
+      .meta {
+        color: var(--muted);
+        margin: 0 0 24px;
+      }
+      section {
+        margin: 32px 0 0;
+        padding-top: 16px;
+        border-top: 1px solid var(--rule);
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+      }
+      .chip {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: var(--chip);
+        color: var(--chip-fg);
+      }
+      .chip.soon {
+        background: var(--soon);
+        color: var(--soon-fg);
+      }
+      .date {
+        color: var(--muted);
+        margin: 2px 0 8px;
+        font-size: 0.95rem;
+      }
+      h3 {
+        font-size: 1rem;
+        margin: 16px 0 4px;
+      }
+      ul {
+        padding-left: 1.25rem;
+        margin: 4px 0;
+      }
+      li {
+        margin: 4px 0;
+        overflow-wrap: anywhere;
+      }
+      a {
+        color: var(--link);
+      }
+      .note {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>ERPWork release notes</h1>
+      <p class="meta">
+        What's new in each version of ERPWork (Android package
+        <code>com.buildwithvivek.erpnext</code>). The build number is shown in the app under
+        Settings &gt; About, for example "Version 1.0.0 (9)".
+      </p>
+
+      <section>
+        <h2>Version 1.0.0 (build 9) <span class="chip soon">Coming next</span></h2>
+        <p class="date">October 2026</p>
+
+        <h3>Push notifications</h3>
+        <ul>
+          <li>
+            Alerts for assignments, mentions, approvals and your site's notification rules now
+            arrive even when ERPWork is closed. Tapping one opens the document.
+          </li>
+          <li>
+            Works for every site you are signed in to. A notification from another site switches
+            the app to that site and opens the document there.
+          </li>
+          <li>
+            One-tap setup: a user with the System Manager role turns it on for the whole site in
+            Settings &gt; Notifications &gt; Enable for this site. Other users need no role.
+            Everyone else can send the setup steps to a System Manager from the same screen.
+          </li>
+        </ul>
+
+        <h3>Sites and account</h3>
+        <ul>
+          <li>Stay signed in to up to five sites and switch between them without signing in again.</li>
+          <li>Profile: switch site or company, and change your password.</li>
+          <li>Privacy policy and terms open inside the app.</li>
+        </ul>
+
+        <h3>Dashboards</h3>
+        <ul>
+          <li>New Manufacturing, Accounts and Assets dashboards.</li>
+          <li>Period filter on every dashboard: Today, Week, Month, Quarter, Year or Custom.</li>
+          <li>
+            Company filter at the top of Home and every dashboard. It starts on your ERPNext default
+            company and applies to everything that has a company.
+          </li>
+        </ul>
+
+        <h3>Lists and documents</h3>
+        <ul>
+          <li>
+            Create Leads, Opportunities, To Dos and Tasks in the app (the + button, and on the My To
+            Do and My Tasks cards), and edit records with the new Edit button. Forms follow your
+            site's own fields, including custom fields.
+          </li>
+          <li>Edit Leads and Opportunities right on the record, in the same design.</li>
+          <li>Change the status of a To Do or Task by tapping its status.</li>
+          <li>Assign and Remind me on every list and document you have access to.</li>
+          <li>
+            New card design for every list, status tabs with counts, progress for Work Orders and
+            Job Cards, and stock per warehouse on Items.
+          </li>
+          <li>Search, filter and sort in one compact row.</li>
+        </ul>
+
+        <h3>Improvements</h3>
+        <ul>
+          <li>Better fit on phones with large text or a notch; the status bar follows the app theme.</li>
+          <li>Permissions are asked with your phone's own dialogs only.</li>
+          <li>
+            Simpler screens: Cancel only on CRM records, no Duplicate, no Region &amp; company
+            screen, and no profile photo or bell on the Home header.
+          </li>
+          <li>"Powered by ERPNext" on the sign-in and About screens.</li>
+        </ul>
+
+        <h3>Ads</h3>
+        <ul>
+          <li>
+            ERPWork is free and shows small banner ads marked "Ad": one fixed at the bottom of Home,
+            dashboards, lists, documents and the ERPNext tab's list pages, and one in the middle of
+            Home and dashboards. None while editing, on forms, sign-in or settings, and none during
+            the first day after install.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Version 1.0.0 (build 8) <span class="chip">Released</span></h2>
+        <p class="date">21 October 2026</p>
+        <ul>
+          <li>Daily ad limits, and protection against accidental and repeated ad taps.</li>
+          <li>Privacy policy and terms explain how ERPWork relates to ERPNext and Frappe.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Version 1.0.0 (build 7) <span class="chip">Released</span></h2>
+        <p class="date">20 October 2026</p>
+        <ul>
+          <li>
+            In-app updates: new versions download in the background and apply on the next start.
+            Check any time in Settings &gt; About &gt; Check for updates.
+          </li>
+          <li>"Forgot password?" on the sign-in screen, and simpler site and sign-in screens.</li>
+          <li>Smaller and faster app.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Version 1.0.0 (builds 3 and 4) <span class="chip">First release</span></h2>
+        <p class="date">20 October 2026</p>
+        <ul>
+          <li>Sign in to your organisation's ERPNext site.</li>
+          <li>
+            Home with your To Dos and Tasks, the Apps workspace, notifications, and the full ERPNext
+            desk in its own tab.
+          </li>
+          <li>Lists and documents, CRM dashboard, Assign and follow-ups.</li>
+          <li>Attendance check-in and check-out with your location.</li>
+          <li>Biometric app lock.</li>
+          <li>Small Google AdMob ads keep the app free.</li>
+        </ul>
+      </section>
+
+      <p class="note" style="margin-top: 32px">
+        <a href="../">ERPWork</a> · <a href="../privacy/">Privacy Policy</a> ·
+        <a href="../terms/">Terms of Use</a>. ERPWork is an independent app, not made, endorsed or
+        supported by Frappe Technologies.
+      </p>
+    </main>
+  </body>
+</html>

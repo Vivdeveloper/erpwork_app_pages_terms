@@ -4,6 +4,7 @@ GitHub Pages site for **ERPWork** (`com.buildwithvivek.erpnext`), a mobile compa
 
 - Privacy Policy: https://vivdeveloper.github.io/erpwork_app_pages_terms/privacy/
 - Terms of Use: https://vivdeveloper.github.io/erpwork_app_pages_terms/terms/
+- Release notes: https://vivdeveloper.github.io/erpwork_app_pages_terms/whats-new/
 
 ## About ERPNext and Frappe
 
@@ -21,4 +22,4 @@ ERPWork is an independent app, not made, endorsed or supported by Frappe Technol
 
 ## Updating
 
-The source files are `docs/privacy-policy.html` and `docs/terms-of-use.html` in the ERPWork app repo. After editing, copy them to `privacy/index.html` and `terms/index.html` here.
+The source files are `docs/privacy-policy.html`, `docs/terms-of-use.html` and `docs/whats-new.html` in the ERPWork app repo. After editing, copy them to `privacy/index.html`, `terms/index.html` and `whats-new/index.html` here.
