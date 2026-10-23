@@ -108,7 +108,7 @@
     <main>
       <h1>ERPWork Privacy Policy</h1>
       <p class="meta">
-        Effective date: 2026-10-21<br />
+        Effective date: 2026-10-23<br />
         App: ERPWork (Android package <code>com.buildwithvivek.erpnext</code>)<br />
         Developer: Vivdeveloper
         <a href="https://github.com/Vivdeveloper/">https://github.com/Vivdeveloper/</a><br />
@@ -130,10 +130,13 @@
           data.
         </li>
         <li>
-          Two exceptions: when you open the attendance check-in screen, your coordinates are sent to
-          <strong>Google Maps</strong> to draw a map preview; and the app shows
-          <strong>Google AdMob</strong> ads on Home and the dashboards, so Google's ads SDK collects
-          advertising data (see <a href="#ads">Ads</a>).
+          Exceptions: when you open the attendance check-in screen, your coordinates are sent to
+          <strong>Google Maps</strong> to draw a map preview; the app shows
+          small <strong>Google AdMob</strong> banner ads on Home, the dashboards, lists, documents
+          and the ERPNext tab's workspace, list and report pages (none during the first day after
+          install), so Google's ads SDK collects advertising data (see <a href="#ads">Ads</a>); and if you allow notifications, your site
+          sends push notifications through <strong>Expo</strong> and
+          <strong>Google Firebase Cloud Messaging</strong>.
         </li>
         <li>
           In the EEA, UK and other places where consent is required, ads are personalised only if
@@ -222,6 +225,18 @@
               <td>Your ERPNext site.</td>
             </tr>
             <tr>
+              <td>Push token, phone model and app version</td>
+              <td>
+                Only if you allow notifications: so each site you are signed in to can send you push
+                notifications when the app is closed. Deleted from a site when you sign out of it or
+                remove it from the app.
+              </td>
+              <td>
+                Each ERPNext site you are signed in to. Notification text is relayed by Expo and
+                Google Firebase Cloud Messaging (see Third parties).
+              </td>
+            </tr>
+            <tr>
               <td>
                 Advertising ID and other device identifiers, IP address (approximate location), ad
                 interactions (such as app launches, taps and ad views) and diagnostics (such as app
@@ -249,10 +264,10 @@
 
       <h3>Data the app does not collect</h3>
       <p>
-        Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>): no
-        install ID or push token; no usage analytics or crash logs of our own; no contacts, call
-        logs, SMS, calendar, health, financial or audio data; no microphone access; no background
-        location.
+        Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>) and
+        the push token described under Third parties: no usage analytics or crash logs of our own;
+        no contacts, call logs, SMS, calendar, health, financial or audio data; no microphone
+        access; no background location.
       </p>
 
       <h2>Third parties</h2>
@@ -276,8 +291,25 @@
           and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
         </li>
         <li>
-          <strong>Notifications.</strong> Notifications are created on your phone from your site's
-          notification log. The app does not register with Expo, Firebase or any other push service.
+          <strong>Push notifications (Expo and Google Firebase Cloud Messaging).</strong> If you
+          allow notifications, the app gets a push token for your phone from Expo and stores it,
+          with your phone's model and the app version, in an "ERPWork Push Token" record on each
+          ERPNext site you are signed in to (switching sites in the app keeps you signed in to the
+          others, so you keep getting their notifications). When one of those sites creates a
+          notification for you, it sends the notification title, a short text, the document type
+          and name, the notification's ID, type and link, the site's address and your user ID
+          (usually your login email) through Expo's push service and Google Firebase Cloud
+          Messaging, which relay it to your phone as service providers (see the
+          <a href="https://expo.dev/privacy">Expo Privacy Policy</a> and the
+          <a href="https://policies.google.com/privacy">Google Privacy Policy</a>). Push works on
+          a site only after it is set up there: a user with the System Manager role can do this in
+          the app (Settings &gt; Notifications &gt; Enable for this site), which adds the "ERPWork
+          Push Token" DocType and the "ERPWork Push" Webhook to that site, or the site's
+          administrator can add them by hand. To stop push notifications, turn off notifications
+          for ERPWork in your phone's settings, or sign out of a site or remove it in Settings &gt;
+          Sites &amp; saved logins, which deletes the push token record from that site. Without
+          push, notifications are created on your phone from the current site's notification log
+          while the app is open or recently used.
         </li>
       </ul>
       <p>
@@ -288,9 +320,12 @@
 
       <h2 id="ads">Ads</h2>
       <p>
-        ERPWork shows one small banner at the end of Home and of each app dashboard, clearly marked
-        "Ad". Ads are served by Google AdMob. There are no ads on sign-in, lists, documents, ERPNext
-        forms you edit, or the ERPNext desk.
+        ERPWork shows small banner ads, clearly marked "Ad": one fixed at the bottom of Home, the
+        app dashboards, lists and documents, plus one in the middle of Home and of each app
+        dashboard. On the ERPNext tab, one fixed banner shows on workspace, list and report pages
+        (not on forms or while you type). Ads are served by Google AdMob. There are no ads on
+        sign-in, forms or while editing, or settings, and no ads at all during the first day after
+        you install the app.
       </p>
       <ul>
         <li>
@@ -333,8 +368,10 @@
           Remove them any time in Settings &gt; Sites &amp; saved logins.
         </li>
         <li>
-          <strong>Session.</strong> Your site's session cookie is kept by the phone's networking
-          system.
+          <strong>Session.</strong> The session cookie of each site you are signed in to (up to
+          five) is kept by the phone's networking system, with the user you signed in as, so you
+          can switch between sites without signing in again. Signing out of a site or removing it
+          ends that session.
         </li>
         <li>
           <strong>Cache.</strong> Recently loaded ERPNext data and site images are cached to make
@@ -349,13 +386,13 @@
       <ul>
         <li>
           <strong>Location (foreground only).</strong> Asked with your phone's permission dialog
-          (once after sign-in, and again when you open Check In or Check Out if not yet allowed), and
-          used only for attendance check-in/check-out, never in the background. Optional unless your
-          organisation's HR settings require location for check-ins.
+          (once after sign-in, and again when you open Check In or Check Out if not yet allowed),
+          and used only for attendance check-in/check-out, never in the background. Optional unless
+          your organisation's HR settings require location for check-ins.
         </li>
         <li>
           <strong>Notifications.</strong> To show alerts for assignments, approvals, mentions and
-          your reminders. Optional.
+          your reminders, including push notifications when the app is closed. Optional.
         </li>
         <li>
           <strong>Camera and photos.</strong> Camera permission is asked once after sign-in (and
@@ -394,9 +431,11 @@
           administrator, who controls that site.
         </li>
         <li>
-          <strong>On your device:</strong> signing out clears cached data and notifications.
-          Removing a site in Settings &gt; Sites &amp; saved logins deletes the saved login.
-          Uninstalling the app removes all app data from the phone.
+          <strong>On your device:</strong> signing out of a site clears cached data and
+          notifications, and deletes this phone's push token record from that site. Removing a site
+          in Settings &gt; Sites &amp; saved logins signs you out of it, deletes its push token
+          record and deletes the saved login. Uninstalling the app removes all app
+          data from the phone.
         </li>
         <li>
           <strong>Help from us:</strong> email
