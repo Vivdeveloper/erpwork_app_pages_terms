@@ -108,7 +108,7 @@
     <main>
       <h1>ERPWork Privacy Policy</h1>
       <p class="meta">
-        Effective date: 2026-10-23<br />
+        Effective date: 2026-10-28<br />
         App: ERPWork (Android package <code>com.buildwithvivek.erpnext</code>)<br />
         Developer: Vivdeveloper
         <a href="https://github.com/Vivdeveloper/">https://github.com/Vivdeveloper/</a><br />
@@ -127,6 +127,7 @@
         <li>
           The app sends your data to <strong>the ERPNext site you sign in to</strong>, which your
           organisation runs or chooses. We (the developer) do not run a server that receives your
+          data; the only data that reaches us is crash reports (see below), which contain no ERPNext
           data.
         </li>
         <li>
@@ -136,13 +137,24 @@
           and the ERPNext tab's workspace, list and report pages (none during the first day after
           install), so Google's ads SDK collects advertising data (see <a href="#ads">Ads</a>); and if you allow notifications, your site
           sends push notifications through <strong>Expo</strong> and
-          <strong>Google Firebase Cloud Messaging</strong>.
+          <strong>Google Firebase Cloud Messaging</strong>; and when the app crashes or hits an
+          error, a crash report goes to <strong>Google Firebase Crashlytics</strong> so we can fix
+          it.
+        </li>
+        <li>
+          <strong>ERPWork AI</strong> (optional, off until it is set up on your site): if you use
+          it, your questions, any photo you attach, and the ERPNext data the app looks up to answer
+          them are sent through your organisation's ERPNext site to <strong>the AI provider you
+          chose</strong> (Anthropic Claude, OpenAI, OpenRouter or Google Gemini), with your own API
+          key. We never receive your key, questions or answers. See
+          <a href="#ai">ERPWork AI</a>.
         </li>
         <li>
           In the EEA, UK and other places where consent is required, ads are personalised only if
           you allow it; elsewhere, ads may be personalised unless you opt out in your phone's ad
-          settings (see <a href="#ads">Ads</a>). Otherwise you get non-personalised ads. No other
-          analytics or crash-reporting SDKs, and we never sell your data.
+          settings (see <a href="#ads">Ads</a>). Otherwise you get non-personalised ads. Crash
+          reports carry technical details only, are not linked to your ERPNext account, and are
+          never used for ads. No other analytics SDKs, and we never sell your data.
         </li>
         <li>
           Location is used only in the foreground, when you open Check In or Check Out. Never in the
@@ -202,12 +214,15 @@
               <td>Photos</td>
               <td>
                 Only photos you choose to take with the camera or pick from your library, for your
-                profile photo or as attachments on CRM records.
+                profile photo, as attachments on CRM records, or to attach to a question in
+                ERPWork AI.
               </td>
               <td>
                 Your ERPNext site. Profile photos are uploaded as public files on the site (visible
                 to anyone who can reach the file URL, which is standard ERPNext behaviour for user
-                images). CRM attachments are uploaded as private files.
+                images). CRM attachments are uploaded as private files. A photo attached in ERPWork
+                AI is sent through your site to your AI provider for that one question and is not
+                saved as a file on the site.
               </td>
             </tr>
             <tr>
@@ -220,7 +235,9 @@
             <tr>
               <td>Business records and activity</td>
               <td>
-                Documents, CRM leads and contacts, comments, check-ins and search terms you type.
+                Documents, CRM leads and contacts, comments, check-ins, POS invoices and closing
+                entries, approvals (approve or reject), and search terms you type. Barcodes you
+                scan are sent to look up the item.
               </td>
               <td>Your ERPNext site.</td>
             </tr>
@@ -251,6 +268,46 @@
               </td>
               <td>Google (AdMob).</td>
             </tr>
+            <tr>
+              <td>
+                Crash logs and diagnostics: the error and where in the app's code it happened, the
+                app version and update, phone model, Android version, free memory and storage,
+                whether the app was in the foreground, and a random installation ID
+              </td>
+              <td>
+                Collected automatically by Google Firebase Crashlytics when the app crashes or hits
+                an error, so we can find and fix problems (app stability). Not linked to your
+                ERPNext account: no name, email, login, site address or business data is attached,
+                and error messages are stripped of email addresses, web addresses and long numbers
+                before they are sent. Only in the Android app, not on the web.
+              </td>
+              <td>Google Firebase Crashlytics, on our behalf (see Third parties).</td>
+            </tr>
+            <tr>
+              <td>
+                ERPWork AI: your questions, any photo you attach (for example a business card), the
+                ERPNext data the app looks up to answer (lists, records, counts and reports you
+                have access to), the AI's answers, your user ID, the site's address and today's
+                date
+              </td>
+              <td>
+                Only if you use ERPWork AI, to answer your question. Each question is sent with up
+                to the last 12 messages of the chat so the AI can follow the conversation.
+              </td>
+              <td>
+                Your ERPNext site, whose "ERPWork AI Chat" script forwards it to the AI provider
+                you chose (see <a href="#ai">ERPWork AI</a>). Not to us.
+              </td>
+            </tr>
+            <tr>
+              <td>ERPWork AI settings: provider, model, API key</td>
+              <td>When you set up ERPWork AI in Settings &gt; ERPWork AI.</td>
+              <td>
+                Your ERPNext site only, in your own "ERPWorkAi Settings" record. The key is stored
+                in an encrypted password field and is never shown again or sent back to the
+                phone.
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -264,10 +321,11 @@
 
       <h3>Data the app does not collect</h3>
       <p>
-        Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>) and
-        the push token described under Third parties: no usage analytics or crash logs of our own;
-        no contacts, call logs, SMS, calendar, health, financial or audio data; no microphone
-        access; no background location.
+        Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>), the
+        push token described under Third parties and the crash reports described above: no usage
+        analytics; no contacts, call logs, SMS, calendar, health, financial or audio data; no microphone
+        access; no background location. The camera is not used to record video, and barcode
+        scanning happens on your phone (only the scanned code is sent to your site).
       </p>
 
       <h2>Third parties</h2>
@@ -311,12 +369,108 @@
           push, notifications are created on your phone from the current site's notification log
           while the app is open or recently used.
         </li>
+        <li>
+          <strong>Google Firebase Crashlytics.</strong> When the app crashes, or catches an error
+          it cannot recover from, the Crashlytics SDK sends a crash report (the crash logs and
+          diagnostics listed above, with a random Crashlytics installation ID and Firebase
+          installation and session IDs used to count how many phones a problem affects) to the
+          developer's Firebase project. Google processes it for us as a service provider under the
+          <a href="https://firebase.google.com/support/privacy">Firebase privacy and security
+            terms</a
+          >
+          and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>; it is
+          not used for advertising and not combined with the ads SDK's data. The reports carry no
+          user ID, name, email, login, site address or ERPNext data. Development builds and the web
+          version send no crash reports.
+        </li>
+        <li>
+          <strong>Your AI provider (only if you use ERPWork AI).</strong> Anthropic, OpenAI,
+          OpenRouter or Google, whichever you choose with your own API key. It receives your
+          questions, attached photos and the ERPNext data looked up to answer them, from your
+          ERPNext site, and processes them under its own terms and privacy policy, not ours. See
+          <a href="#ai">ERPWork AI</a>.
+        </li>
       </ul>
       <p>
         We do not sell personal data. The only data shared for advertising is what Google's ads SDK
         collects, described under <a href="#ads">Ads</a>. Your ERPNext business data, profile and
-        location coordinates are never sent to the ads SDK.
+        location coordinates are never sent to the ads SDK. We do not send your data to an AI
+        provider ourselves; with ERPWork AI, you or your organisation choose the provider and
+        provide the key.
       </p>
+
+      <h2 id="ai">ERPWork AI</h2>
+      <p>
+        ERPWork AI is an optional assistant that answers questions about your ERPNext data and can
+        help create records. It is off until it is set up: a user with the System Manager and
+        Script Manager roles turns it on for a site in the app (Settings &gt; ERPWork AI &gt;
+        Enable for this site), which adds an "ERPWorkAi Settings" DocType and an "ERPWork AI Chat"
+        API Server Script to that site. Then each user who wants to use it adds their own AI
+        provider, model and API key ("bring your own key"). The developer does not provide an AI
+        service and never receives your key, questions, photos or answers.
+      </p>
+      <ul>
+        <li>
+          <strong>How it works.</strong> Your question (and any photo you attach, for example a
+          business card to create a Lead) goes from the app to your ERPNext site, whose Server
+          Script reads your key and sends the request to your AI provider over HTTPS; the reply
+          comes back the same way. To answer, the app looks up ERPNext data with your own login
+          and permissions (search, lists, single records, counts and reports you can already see)
+          and that data is sent to the AI provider as part of the conversation. The request also
+          includes your user ID, the site's address and today's date.
+        </li>
+        <li>
+          <strong>Your API key.</strong> Stored on your organisation's ERPNext site in an encrypted
+          password field of your own "ERPWorkAi Settings" record. It is never shown again or sent
+          back to the phone, and the script does not include it in replies or error messages.
+          As with any ERPNext password field, the site's screens and API never show it in plain
+          text, though whoever runs the site's server can technically decrypt it.
+        </li>
+        <li>
+          <strong>Changes need your Confirm.</strong> The AI can only propose creating a Lead,
+          Opportunity, Customer, Contact, Timesheet, ToDo or Task, or changing a record's status.
+          Nothing is saved until you tap Confirm, and it is saved with your own permissions. The AI
+          cannot read or
+          change the site's setup (DocTypes, fields, scripts, roles, users, permissions or
+          settings).
+        </li>
+        <li>
+          <strong>Chat history stays on your phone.</strong> Chats are saved only on this device
+          (in the app's private storage; in the browser's local storage on the web), per site and
+          user: up to 30 earlier chats of up to 200 messages each. They are not stored on your
+          ERPNext site or in any cloud by the app. Photos you attach are sent for that one question
+          and are not kept in the saved history.
+        </li>
+        <li>
+          <strong>Your AI provider's terms apply.</strong> What the provider does with requests
+          (for example keeping logs for abuse monitoring, or using them to improve its models) is
+          set by its own terms and your account settings with it:
+          <a href="https://www.anthropic.com/legal/privacy">Anthropic (Claude)</a>,
+          <a href="https://openai.com/policies/privacy-policy">OpenAI</a>,
+          <a href="https://openrouter.ai/privacy">OpenRouter</a> (which also passes requests to
+          the model's own provider) and
+          <a href="https://policies.google.com/privacy">Google (Gemini)</a>. Google's free tier
+          of the Gemini API may use prompts and answers to improve Google's products; for business
+          data, use a paid API key and check your organisation's rules before using ERPWork AI.
+        </li>
+        <li>
+          <strong>Answers can be wrong.</strong> Answers are generated by AI, are labelled
+          "AI-generated" and may be incomplete or incorrect; the chat shows "ERPWork AI can make
+          mistakes". Check important figures in ERPNext before relying on them.
+        </li>
+        <li>
+          <strong>Reporting an answer.</strong> If an answer is offensive or inappropriate, you can
+          report it from the chat. This opens your email app with a message to us containing that
+          question and answer, which you can edit before sending; nothing is sent unless you send
+          it. We use reports only to improve ERPWork AI's safeguards and delete them once handled.
+        </li>
+        <li>
+          <strong>Turning it off.</strong> Switch off "Enabled" in Settings &gt; ERPWork AI, or
+          ask your administrator to delete your "ERPWorkAi Settings" record (which deletes your
+          key) or disable the "ERPWork AI Chat" Server Script. You can also revoke the key in your
+          AI provider's account at any time.
+        </li>
+      </ul>
 
       <h2 id="ads">Ads</h2>
       <p>
@@ -379,6 +533,19 @@
           reminders. Downloaded PDFs or attachments may remain in the app's temporary cache folder
           until the system clears it or you clear the app's storage.
         </li>
+        <li>
+          <strong>ERPWork AI chats.</strong> Your AI chats (up to 30 earlier chats of up to 200
+          messages each, per site and user) are kept in the app's private storage on the phone.
+          Delete one chat from the chat list, or a whole conversation with Clear chat; all chats
+          are deleted when you sign out, use Settings &gt; Clear cache, clear the app's data or
+          uninstall the app.
+        </li>
+        <li>
+          <strong>Changes made offline.</strong> Comments, status changes with a remark, follow-up
+          To Dos and check-ins made without a connection are kept on the phone (encrypted on
+          Android) for that site and user until they are sent, or until you discard them in the
+          pending changes list.
+        </li>
         <li>App data is excluded from Android cloud backup.</li>
       </ul>
 
@@ -396,11 +563,11 @@
         </li>
         <li>
           <strong>Camera and photos.</strong> Camera permission is asked once after sign-in (and
-          again if needed when you take a photo); the camera is used only when you choose to take a
-          photo. Existing photos are chosen through the system photo picker; the app does not
-          request photo or storage permission and does not get access to your whole photo library.
-          On Android 9 and older, taking a photo also asks for storage permission so the camera can
-          save the picture.
+          again if needed when you take a photo or scan); the camera is used only while you choose
+          to take a photo (profile, attachments, or a photo for ERPWork AI such as a business card)
+          or scan a barcode, always in the foreground. Existing photos are chosen through the
+          system photo picker; the app does not request photo or storage permission and does not
+          get access to your whole photo library.
         </li>
         <li>
           <strong>Biometrics (fingerprint or face unlock).</strong> Used only to lock and unlock the
@@ -417,9 +584,13 @@
       <h2>Security</h2>
       <p>
         The app only connects to sites using HTTPS, so data between the app and your ERPNext site is
-        encrypted in transit. The Google Maps request and the data the ads SDK sends to Google are
-        also encrypted in transit. Saved passwords are kept in Android's secure storage (Android
-        Keystore). No method of transmission or storage is completely secure, but we work to protect
+        encrypted in transit. The Google Maps request, the data the ads SDK sends to Google and
+        crash reports sent to Firebase Crashlytics are also encrypted in transit, and your ERPNext
+        site calls your AI provider over HTTPS. AI API keys are stored only on your ERPNext site,
+        in an encrypted password field, never on the phone. Saved passwords are kept in Android's
+        secure storage (Android Keystore). On Android, screenshots and screen recording are
+        blocked on screens that show business data (dashboards, lists, documents, reports, POS
+        and the AI chat), which also hides them in the recent-apps view. No method of transmission or storage is completely secure, but we work to protect
         your data.
       </p>
 
@@ -434,8 +605,15 @@
           <strong>On your device:</strong> signing out of a site clears cached data and
           notifications, and deletes this phone's push token record from that site. Removing a site
           in Settings &gt; Sites &amp; saved logins signs you out of it, deletes its push token
-          record and deletes the saved login. Uninstalling the app removes all app
-          data from the phone.
+          record and deletes the saved login. Signing out also deletes your ERPWork AI chats, as do
+          Settings &gt; Clear cache and Clear chat in the chat itself. Uninstalling the app or
+          clearing its data removes all app data from the phone.
+        </li>
+        <li>
+          <strong>ERPWork AI:</strong> your AI settings record (with your key) stays on your
+          ERPNext site until you or your administrator delete it. Requests sent to your AI provider
+          are kept according to that provider's own policies and your account settings with it;
+          we do not receive or hold them.
         </li>
         <li>
           <strong>Help from us:</strong> email
@@ -448,6 +626,13 @@
           <a href="https://policies.google.com/technologies/retention">How Google retains data</a>);
           we do not receive it. You can reset or delete your advertising ID in your phone's settings
           and manage ad data in <a href="https://myadcenter.google.com/">My Ad Center</a>.
+        </li>
+        <li>
+          <strong>Crash reports:</strong> Firebase Crashlytics keeps crash stack traces and their
+          identifiers for 90 days, then deletes them. Because reports are not linked to your
+          account, we cannot look up yours by name or email; if you want them deleted sooner, email
+          us and we can delete all of this app's crash data in Firebase. Uninstalling the app
+          removes its installation ID.
         </li>
       </ul>
       <p>
