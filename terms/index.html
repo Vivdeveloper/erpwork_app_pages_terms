@@ -86,7 +86,7 @@
     <main>
       <h1>ERPWork Terms of Use</h1>
       <p class="meta">
-        Effective date: 2026-10-28<br />
+        Effective date: 2026-11-01<br />
         App: ERPWork (Android package <code>com.buildwithvivek.erpnext</code>)<br />
         Developer: Vivdeveloper
         <a href="https://github.com/Vivdeveloper/">https://github.com/Vivdeveloper/</a><br />
@@ -214,9 +214,10 @@
           your organisation allows sending its business data to the provider you choose.
         </li>
         <li>
-          <strong>What is sent.</strong> Your questions, any photo you attach and the ERPNext data
-          the app looks up with your own permissions to answer them are sent from your ERPNext site
-          to your provider. The <a href="../privacy/#ai">Privacy Policy</a> explains this in
+          <strong>What is sent.</strong> Your questions (typed or dictated), any photo you attach,
+          and the ERPNext data the app looks up with your own permissions to answer them or to
+          pre-fill a new record (including your own recent records of that type) are sent from your
+          ERPNext site to your provider. The <a href="../privacy/#ai">Privacy Policy</a> explains this in
           detail.
         </li>
         <li>
@@ -227,9 +228,10 @@
         </li>
         <li>
           <strong>You confirm every change.</strong> ERPWork AI can only propose creating a Lead,
-          Timesheet, ToDo or Task, or changing a record's status.
-          Nothing is saved until you review it and tap Confirm, and it is saved under your own
-          account and permissions. You are responsible for the changes you confirm. ERPWork AI
+          Timesheet, ToDo or Task, adding time to your draft Timesheet, or changing a record's
+          status. Nothing is saved until you review it and tap Confirm (or Save &amp; Submit, for a
+          Timesheet), and it is saved under your own account and permissions. Values the AI
+          pre-fills from your earlier records or a photo can be wrong, so check them first. You are responsible for the changes you confirm. ERPWork AI
           cannot read or change the site's setup (DocTypes, fields, scripts, roles, users,
           permissions or settings).
         </li>
@@ -240,6 +242,21 @@
           improve the safeguards.
         </li>
         <li>We may change, limit or remove ERPWork AI or its supported providers at any time.</li>
+      </ul>
+
+      <h2 id="updates">Updates and scanning</h2>
+      <ul>
+        <li>
+          The app updates its own code in the background (over-the-air updates through Expo) and
+          checks whether a newer version must be installed from the Play Store. When a version is
+          no longer supported, the app may ask you to update before you can keep using it.
+        </li>
+        <li>
+          The Barcodes screen saves the codes you scan into the Item's barcode table on your
+          ERPNext site, and the POS screen creates invoices and draft (held) orders there. Check
+          the Item or invoice before you scan or confirm; you are responsible for what is saved
+          with your account.
+        </li>
       </ul>
 
       <h2 id="ads">Ads</h2>

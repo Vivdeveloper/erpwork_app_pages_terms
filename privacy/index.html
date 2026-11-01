@@ -108,7 +108,7 @@
     <main>
       <h1>ERPWork Privacy Policy</h1>
       <p class="meta">
-        Effective date: 2026-10-28<br />
+        Effective date: 2026-11-01<br />
         App: ERPWork (Android package <code>com.buildwithvivek.erpnext</code>)<br />
         Developer: Vivdeveloper
         <a href="https://github.com/Vivdeveloper/">https://github.com/Vivdeveloper/</a><br />
@@ -139,7 +139,9 @@
           sends push notifications through <strong>Expo</strong> and
           <strong>Google Firebase Cloud Messaging</strong>; and when the app crashes or hits an
           error, a crash report goes to <strong>Google Firebase Crashlytics</strong> so we can fix
-          it.
+          it; and to keep the app up to date it checks <strong>Expo</strong> (EAS Update) for
+          in-app updates and reads a small version file from <strong>GitHub Pages</strong> (see
+          <a href="#updates">App updates</a>).
         </li>
         <li>
           <strong>ERPWork AI</strong> (optional, off until it is set up on your site): if you use
@@ -236,8 +238,11 @@
               <td>Business records and activity</td>
               <td>
                 Documents, CRM leads and contacts, comments, check-ins, POS invoices and closing
-                entries, approvals (approve or reject), and search terms you type. Barcodes you
-                scan are sent to look up the item.
+                entries, held (draft) POS orders, approvals (approve or reject), and search terms
+                you type. Barcodes you scan (with the camera or a USB / Bluetooth scanner) are sent
+                to look up the item and its stock per warehouse; on the Barcodes screen, a barcode
+                you choose to link is saved in that Item's barcode table (only if you may edit
+                Items).
               </td>
               <td>Your ERPNext site.</td>
             </tr>
@@ -285,10 +290,12 @@
             </tr>
             <tr>
               <td>
-                ERPWork AI: your questions, any photo you attach (for example a business card), the
-                ERPNext data the app looks up to answer (lists, records, counts and reports you
-                have access to), the AI's answers, your user ID, the site's address and today's
-                date
+                ERPWork AI: your questions (typed, or dictated with voice typing as text), any photo
+                you attach (for example a business card), the ERPNext data the app looks up to
+                answer (lists, records, counts and reports you have access to), before a new
+                record is proposed your own recent records of that type (see
+                <a href="#ai">ERPWork AI</a>), the AI's answers, your user ID, the site's address
+                and today's date
               </td>
               <td>
                 Only if you use ERPWork AI, to answer your question. Each question is sent with up
@@ -297,6 +304,21 @@
               <td>
                 Your ERPNext site, whose "ERPWork AI Chat" script forwards it to the AI provider
                 you chose (see <a href="#ai">ERPWork AI</a>). Not to us.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Update checks: the app's version and build, the installed update's ID, platform
+                (Android), a random installation ID used by the update service, and your IP
+                address
+              </td>
+              <td>
+                Automatically, in store builds only, when the app starts and when you come back to
+                it: to download in-app updates and to tell you when a newer version is needed from
+                the Play Store. No ERPNext data or account details are included.
+              </td>
+              <td>
+                Expo (EAS Update) and GitHub (GitHub Pages), see <a href="#updates">App updates</a>.
               </td>
             </tr>
             <tr>
@@ -323,9 +345,12 @@
       <p>
         Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>), the
         push token described under Third parties and the crash reports described above: no usage
-        analytics; no contacts, call logs, SMS, calendar, health, financial or audio data; no microphone
-        access; no background location. The camera is not used to record video, and barcode
-        scanning happens on your phone (only the scanned code is sent to your site).
+        analytics; no contacts, call logs, SMS, calendar, health, financial or audio data; no
+        background location. The microphone is used only for voice typing in ERPWork AI, and the app
+        never records, saves or sends audio (see Permissions). The camera is not used to record
+        video, and barcode reading happens on your phone (only the scanned code is sent to your
+        site). Keys from a USB or Bluetooth barcode scanner are read in the background only on the
+        POS selling screen, to recognise scanned codes.
       </p>
 
       <h2>Third parties</h2>
@@ -383,6 +408,33 @@
           user ID, name, email, login, site address or ERPNext data. Development builds and the web
           version send no crash reports.
         </li>
+        <li id="updates">
+          <strong>App updates (Expo EAS Update and GitHub Pages).</strong> In store builds, when
+          the app starts and when you return to it, it asks Expo's update service
+          (<code>u.expo.dev</code>) whether a newer version of the app's code is available, and
+          downloads it if so. The request carries technical details only: platform, app runtime
+          version, the ID of the installed update, the update channel and a random installation ID
+          that Expo generates for this app install (used to deliver updates and count how many
+          installs run each update), plus your IP address as with any internet request. Expo
+          processes it for us as a service provider under the
+          <a href="https://expo.dev/privacy">Expo Privacy Policy</a>. The app also downloads a
+          small public file (<code>app-version.json</code>) from our policy site on GitHub Pages,
+          at launch and at most every 6 hours when you return to it, to tell you when a newer
+          version must be installed from the Play Store; GitHub receives your IP address and
+          browser/app details with that request, under the
+          <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+            >GitHub Privacy Statement</a
+          >. Neither request contains your name, login, site address or ERPNext data, and we do
+          not use them to identify you.
+        </li>
+        <li>
+          <strong>Your phone's speech service (only if you use voice typing).</strong> When you tap
+          the mic in ERPWork AI, your phone's own speech recogniser (on Android usually Google's;
+          on the web, your browser's) turns what you say into text. It may process the audio on its
+          provider's servers under that provider's privacy policy (for Google, the
+          <a href="https://policies.google.com/privacy">Google Privacy Policy</a>). The app
+          receives only the text.
+        </li>
         <li>
           <strong>Your AI provider (only if you use ERPWork AI).</strong> Anthropic, OpenAI,
           OpenRouter or Google, whichever you choose with your own API key. It receives your
@@ -428,11 +480,36 @@
         </li>
         <li>
           <strong>Changes need your Confirm.</strong> The AI can only propose creating a Lead,
-          Timesheet, ToDo or Task, or changing a record's status.
-          Nothing is saved until you tap Confirm, and it is saved with your own permissions. The AI
-          cannot read or
-          change the site's setup (DocTypes, fields, scripts, roles, users, permissions or
-          settings).
+          Timesheet, ToDo or Task, adding time to your draft Timesheet, or changing a record's
+          status. Nothing is saved until you tap Confirm (for a Timesheet you choose Save, as a
+          draft, or Save &amp; Submit), and it is saved with your own permissions. Switch off
+          "Allow actions" in Settings &gt; ERPWork AI to keep the AI to answering questions only.
+          The AI cannot read or change the site's setup (DocTypes, fields, scripts, roles, users,
+          permissions or settings).
+        </li>
+        <li>
+          <strong>Learning from your own records.</strong> Before it proposes a new Lead, ToDo,
+          Task or Timesheet, the app reads your own recent records of that type (about the last
+          10, with the fields you usually fill and the values you usually pick; for Timesheets,
+          also this week's timesheets) so the AI can pre-fill the new one and ask only for what is
+          missing. For a Lead it also searches for possible duplicates with the same email, phone
+          number or company name. This data is read with your own permissions and is sent to your
+          AI provider as part of the conversation, like any other lookup.
+        </li>
+        <li>
+          <strong>Photos.</strong> A photo you take or pick for a question (for example a business
+          card to create a Lead) is made smaller on your phone (to at most 1024 pixels on its long
+          side) and sent through your ERPNext site to your AI provider with that one question. It
+          is not saved on the site, and it is not kept in the saved chat history.
+        </li>
+        <li>
+          <strong>Voice typing.</strong> The mic in the chat turns your speech into text in the
+          message box using your phone's speech service (see Permissions). You can edit the text
+          before sending; the app does not record, save or send any audio.
+        </li>
+        <li>
+          <strong>Copying answers.</strong> Copy puts an answer's text on your phone's clipboard,
+          where other apps you paste into can read it.
         </li>
         <li>
           <strong>Chat history stays on your phone.</strong> Chats are saved only on this device
@@ -459,10 +536,11 @@
           mistakes". Check important figures in ERPNext before relying on them.
         </li>
         <li>
-          <strong>Reporting an answer.</strong> If an answer is offensive or inappropriate, you can
-          report it from the chat. This opens your email app with a message to us containing that
-          question and answer, which you can edit before sending; nothing is sent unless you send
-          it. We use reports only to improve ERPWork AI's safeguards and delete them once handled.
+          <strong>Reporting an answer.</strong> If an answer is offensive, wrong or inappropriate,
+          tap Report on it and pick a reason. This opens your email app with a message to us
+          containing the reason, the question and the answer (each cut to 1,500 characters), the AI
+          provider and model, the app version and the time; you can edit it before sending, and
+          nothing is sent unless you send it. We use reports only to improve ERPWork AI's safeguards and delete them once handled.
         </li>
         <li>
           <strong>Turning it off.</strong> Switch off "Enabled" in Settings &gt; ERPWork AI, or
@@ -546,6 +624,17 @@
           Android) for that site and user until they are sent, or until you discard them in the
           pending changes list.
         </li>
+        <li>
+          <strong>POS settings and quick items.</strong> The POS screen's scan settings (camera
+          strip, hardware scanner, how repeat scans behave) are kept on this phone, and the "Sold
+          most here" quick items are counted on the phone per site and POS Profile from the sales
+          you complete. They are not sent anywhere and are cleared with the app's cache or data.
+          Held POS orders are saved as drafts on your ERPNext site.
+        </li>
+        <li>
+          <strong>Pictures from your site.</strong> Item, profile and site images are loaded from
+          your ERPNext site and may be cached on the phone.
+        </li>
         <li>App data is excluded from Android cloud backup.</li>
       </ul>
 
@@ -565,7 +654,8 @@
           <strong>Camera and photos.</strong> Camera permission is asked once after sign-in (and
           again if needed when you take a photo or scan); the camera is used only while you choose
           to take a photo (profile, attachments, or a photo for ERPWork AI such as a business card)
-          or scan a barcode, always in the foreground. Existing photos are chosen through the
+          or scan barcodes (Scan, the Barcodes screen, or the camera strip on the POS screen while
+          you have it open), always in the foreground. Existing photos are chosen through the
           system photo picker; the app does not request photo or storage permission and does not
           get access to your whole photo library.
         </li>
@@ -575,7 +665,15 @@
           red mic). Your phone's own speech service (Apple on iPhone, Google on Android, or your
           browser on the web) turns the speech into text, and may process the audio on its servers
           under its own privacy policy. The text appears in the chat box for you to edit and send;
-          the app does not save or send any audio.
+          the app does not save or send any audio. Without this permission, everything else in
+          ERPWork AI still works by typing.
+        </li>
+        <li>
+          <strong>USB and Bluetooth barcode scanners.</strong> No permission is needed: a scanner
+          paired with your phone types like a keyboard. On the POS selling screen the app listens
+          for these keystrokes while no other field is in use (you can switch this off in the POS
+          scan settings) only to recognise scanned codes; it does not log or send other typing. On
+          the Barcodes screen the scanner simply types into the code field.
         </li>
         <li>
           <strong>Biometrics (fingerprint or face unlock).</strong> Used only to lock and unlock the
