@@ -108,7 +108,7 @@
     <main>
       <h1>ERPWork Privacy Policy</h1>
       <p class="meta">
-        Effective date: 2026-11-01<br />
+        Effective date: 2026-11-12<br />
         App: ERPWork (Android package <code>com.buildwithvivek.erpnext</code>)<br />
         Developer: Vivdeveloper
         <a href="https://github.com/Vivdeveloper/">https://github.com/Vivdeveloper/</a><br />
@@ -127,19 +127,21 @@
         <li>
           The app sends your data to <strong>the ERPNext site you sign in to</strong>, which your
           organisation runs or chooses. We (the developer) do not run a server that receives your
-          data; the only data that reaches us is crash reports (see below), which contain no ERPNext
-          data.
+          data; the only data that reaches us is crash reports and anonymous usage statistics (see
+          below), which contain no ERPNext data.
         </li>
         <li>
           Exceptions: when you open the attendance check-in screen, your coordinates are sent to
           <strong>Google Maps</strong> to draw a map preview; the app shows
           small <strong>Google AdMob</strong> banner ads on Home, the dashboards, lists, documents
-          and the ERPNext tab's workspace, list and report pages (none during the first day after
+          and the ERPNext tab's workspace, list and report pages (none during the first 10 minutes after
           install), so Google's ads SDK collects advertising data (see <a href="#ads">Ads</a>); and if you allow notifications, your site
           sends push notifications through <strong>Expo</strong> and
           <strong>Google Firebase Cloud Messaging</strong>; and when the app crashes or hits an
           error, a crash report goes to <strong>Google Firebase Crashlytics</strong> so we can fix
-          it; and to keep the app up to date it checks <strong>Expo</strong> (EAS Update) for
+          it; unless you turn it off, anonymous usage statistics (which screens and features are
+          used) go to <strong>Google Analytics for Firebase</strong> (see
+          <a href="#analytics">Usage statistics</a>); and to keep the app up to date it checks <strong>Expo</strong> (EAS Update) for
           in-app updates and reads a small version file from <strong>GitHub Pages</strong> (see
           <a href="#updates">App updates</a>).
         </li>
@@ -156,7 +158,10 @@
           you allow it; elsewhere, ads may be personalised unless you opt out in your phone's ad
           settings (see <a href="#ads">Ads</a>). Otherwise you get non-personalised ads. Crash
           reports carry technical details only, are not linked to your ERPNext account, and are
-          never used for ads. No other analytics SDKs, and we never sell your data.
+          never used for ads. Usage statistics record which screens and features are used, not
+          who you are or your ERPNext data; they are never used for ads, you can turn them off in
+          Settings, and in the EEA and UK they are collected only with your consent. We never sell
+          your data.
         </li>
         <li>
           Location is used only in the foreground, when you open Check In or Check Out. Never in the
@@ -290,6 +295,31 @@
             </tr>
             <tr>
               <td>
+                Usage statistics: the screens you open (as the screen type, such as "document" or
+                "list", never the document or its name), the app features you use (such as signing
+                in, switching site, completing a POS sale with its number of items and payment
+                modes, scanning, asking ERPWork AI, confirming an AI action, linking a barcode,
+                checking in or out, approving, opening a standard report, sharing or rating the
+                app, seeing an update prompt), session start and engagement time, a random app
+                instance ID, phone model, Android version, app version, language, and your
+                approximate location (country, region or city), which Google derives from your IP
+                address
+              </td>
+              <td>
+                Collected automatically by Google Analytics for Firebase, unless you turn off
+                Settings &gt; Share usage statistics; in the EEA and UK only if you consent in
+                Google's consent form. Used only to see how the app is used and to improve it. No
+                name, email, user ID, site address, company, customer or item names, document names,
+                amounts, typed text or AI questions are sent, and the advertising ID is not
+                collected for it. Only in the Android app, not on the web.
+              </td>
+              <td>
+                Google Analytics for Firebase, on our behalf (see
+                <a href="#analytics">Usage statistics</a>).
+              </td>
+            </tr>
+            <tr>
+              <td>
                 ERPWork AI: your questions (typed, or dictated with voice typing as text), any photo
                 you attach (for example a business card), the ERPNext data the app looks up to
                 answer (lists, records, counts and reports you have access to), before a new
@@ -344,8 +374,8 @@
       <h3>Data the app does not collect</h3>
       <p>
         Apart from the advertising data Google's ads SDK collects (see <a href="#ads">Ads</a>), the
-        push token described under Third parties and the crash reports described above: no usage
-        analytics; no contacts, call logs, SMS, calendar, health, financial or audio data; no
+        push token described under Third parties, and the crash reports and usage statistics
+        described above: no contacts, call logs, SMS, calendar, health, financial or audio data; no
         background location. The microphone is used only for voice typing in ERPWork AI, and the app
         never records, saves or sends audio (see Permissions). The camera is not used to record
         video, and barcode reading happens on your phone (only the scanned code is sent to your
@@ -408,6 +438,36 @@
           user ID, name, email, login, site address or ERPNext data. Development builds and the web
           version send no crash reports.
         </li>
+        <li id="analytics">
+          <strong>Usage statistics (Google Analytics for Firebase).</strong> To learn which screens
+          and features are used, and where people get stuck, the app sends the usage statistics
+          listed above to the developer's Google Analytics property. Each phone has a random app
+          instance ID; the app sets no user ID and sends no names, emails, site addresses,
+          document names, amounts, typed text or AI questions, only fixed words and counts about
+          each feature. Google derives an approximate location (country, region or city) from your
+          IP address; it does not receive your GPS location. Google processes the data for us as a
+          service provider under the
+          <a href="https://firebase.google.com/support/privacy">Firebase privacy and security
+            terms</a
+          >
+          and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The app
+          turns off advertising storage, ad user data and ad personalisation for Google Analytics,
+          so usage statistics are not used for ads or ad personalisation, and they are not sold.
+          <ul>
+            <li>
+              <strong>Your choice:</strong> turn off <em>Settings &gt; Share usage statistics</em>
+              at any time; the app then stops sending and deletes the analytics data and app
+              instance ID kept on your phone. Where Google's consent rules apply (EEA, UK and
+              Switzerland), usage statistics are collected only if you consent in Google's consent
+              form; change your choice in Settings &gt; Privacy &amp; ads. Elsewhere they are on by
+              default. Nothing is sent until the app has read your setting.
+            </li>
+            <li>
+              <strong>Not collected:</strong> development builds and the web version send no usage
+              statistics.
+            </li>
+          </ul>
+        </li>
         <li id="updates">
           <strong>App updates (Expo EAS Update and GitHub Pages).</strong> In store builds, when
           the app starts and when you return to it, it asks Expo's update service
@@ -446,7 +506,8 @@
       <p>
         We do not sell personal data. The only data shared for advertising is what Google's ads SDK
         collects, described under <a href="#ads">Ads</a>. Your ERPNext business data, profile and
-        location coordinates are never sent to the ads SDK. We do not send your data to an AI
+        location coordinates are never sent to the ads SDK, and usage statistics are not used for
+        advertising. We do not send your data to an AI
         provider ourselves; with ERPWork AI, you or your organisation choose the provider and
         provide the key.
       </p>
@@ -556,8 +617,8 @@
         app dashboards, lists and documents, plus one in the middle of Home and of each app
         dashboard. On the ERPNext tab, one fixed banner shows on workspace, list and report pages
         (not on forms or while you type). Ads are served by Google AdMob. There are no ads on
-        sign-in, forms or while editing, or settings, and no ads at all during the first day after
-        you install the app.
+        sign-in, forms or while editing, or settings, and no ads at all during the first 10 minutes
+        after you install the app.
       </p>
       <ul>
         <li>
@@ -690,8 +751,8 @@
       <h2>Security</h2>
       <p>
         The app only connects to sites using HTTPS, so data between the app and your ERPNext site is
-        encrypted in transit. The Google Maps request, the data the ads SDK sends to Google and
-        crash reports sent to Firebase Crashlytics are also encrypted in transit, and your ERPNext
+        encrypted in transit. The Google Maps request, the data the ads SDK sends to Google, and
+        crash reports and usage statistics sent to Firebase are also encrypted in transit, and your ERPNext
         site calls your AI provider over HTTPS. AI API keys are stored only on your ERPNext site,
         in an encrypted password field, never on the phone. Saved passwords are kept in Android's
         secure storage (Android Keystore). On Android, screenshots and screen recording are
@@ -739,6 +800,15 @@
           account, we cannot look up yours by name or email; if you want them deleted sooner, email
           us and we can delete all of this app's crash data in Firebase. Uninstalling the app
           removes its installation ID.
+        </li>
+        <li>
+          <strong>Usage statistics:</strong> Google Analytics keeps event-level data (linked to the
+          random app instance ID) for the retention period set in our Analytics property (the
+          default, 2 months), then deletes it; reports made from it contain only totals. Turning
+          off Settings &gt; Share usage statistics deletes the analytics data and app instance ID
+          on your phone, and uninstalling the app removes them. Because the statistics are not
+          linked to your account, we cannot look up yours by name or email; email us if you have
+          a question about them.
         </li>
       </ul>
       <p>
